@@ -64,7 +64,7 @@ function ListFooter({tasks, handleChange}: ListFooterProps) {
   }
 
   return (
-    <li className="flex p-5 bg-default">
+    <li className="flex p-5">
       {renderItemsCount()}
       {renderFilterButtons()}
       {renderRemoveDone()}
