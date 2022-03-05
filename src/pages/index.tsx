@@ -1,4 +1,22 @@
+import initialTasks from '../data/mock';
+import Task from '../model/Task';
+
 export default function Home() {
+  let tasks = initialTasks;
+
+  function renderTasks() {
+    return tasks.items.map(t => {
+      return (
+        <div key={t.id}> 
+          <span>{t.id} | </span>
+          <span>{t.description} | </span>
+          <span>{t.done ? 'Done' : 'Active'}</span>
+        </div>
+      );
+    });
+  }
+
+
   return (
     <div className={`
       flex
@@ -12,9 +30,7 @@ export default function Home() {
       h-screen
       text-2xl
     `}>
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
+      {renderTasks()}
     </div>
   )
 }
